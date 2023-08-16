@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Entregas',
+        title: 'QRScanner',
         initialRoute: 'home',
         routes: {
           'home': (_) => const HomePage(),

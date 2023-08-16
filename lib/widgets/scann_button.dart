@@ -23,8 +23,6 @@ class ScannButton extends StatelessWidget {
         final String decrypted = decryptCode(encrypt);
         print(decrypted);*/
 
-
-        
         //Uncomment the lines to use a prefabricated answer or use the QR reader
         //String barcodeScanRes = await FlutterBarcodeScanner.scanBarcode('#339FFF', 'Cancelar', false, ScanMode.QR);
         String barcodeScanRes= 'Joel Montesanos casa 24 LK98302PL March Blanco denegado';
