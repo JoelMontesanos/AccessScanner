@@ -5,10 +5,11 @@ import '../provider/scan_list_provider.dart';
 
 class ScanTiles extends StatelessWidget {
 
+
   final String tipo;
 
   const ScanTiles({super.key, required this.tipo});
-  
+  final String mensaje =' Status: ';
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class ScanTiles extends StatelessWidget {
           subtitle:Text(scans[i].id.toString()),
           //trailing: const Icon(Icons.keyboard_arrow_right_outlined, color: Colors.grey,),
           //onTap: ()=> print(scans[i].id),
+          onTap: (){},
         ),
       );
   }

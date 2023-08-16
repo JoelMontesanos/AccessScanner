@@ -22,7 +22,7 @@ class DBProvider{
   // path donde se almacena la base de datos
   Directory documentsDirectory = await getApplicationDocumentsDirectory();
   final path = join(documentsDirectory.path, 'ScansDB.db');
-  //print(path);
+  print(path);
 
   // Crea la base de datos
   return await openDatabase(
@@ -40,18 +40,6 @@ class DBProvider{
     }
     );
 }
-//Crear un nuevo Scan Raw
-/*Future <int>nuevoScannRaw(ScanModel nuevoScan)async{
-final db = await database;
-final id = nuevoScan.id;
-final tipo = nuevoScan.tipo;
-final valor = nuevoScan.valor;
-
-final res = await db!.rawInsert('''
-  INSERT INTO Scans(id, tipo, valor) VALUES ('$id','$tipo', '$valor')
-''');
-return res;
-}*/
 
 //Crear un nuevo Scan
 Future <int>nuevoScann(ScanModel nuevoScan)async{
@@ -78,7 +66,6 @@ Future<List<ScanModel>?>getThemAll()async{
 Future<List<ScanModel>?>getThemByType(String tipo)async{
   final db = await database;
   final res = await db!.query('Scans', where: 'tipo=?',whereArgs: [tipo]);
-  //final res = await db!.rawQuery('''SELECT * FROM Scans WHERE tipo = '$tipo ''');//hay un error en scan list provider a la hora de aceptar 'geo', de sintaxis
   return res.isNotEmpty
   ? res.map( (s)=>ScanModel.fromJson(s) ).toList()
   : [];

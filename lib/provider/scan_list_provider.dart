@@ -39,4 +39,5 @@ class ScanListProvider extends ChangeNotifier{
     cargarScansPorTipo(tipoSeleccionado);
   }
 
+
 }
